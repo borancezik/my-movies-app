@@ -1,10 +1,20 @@
 import "./App.css";
+import Header from "./components/Header";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Watchlist from "./components/Watchlist";
+import Watched from "./components/Watched";
+import Add from "./components/Add";
 
 function App() {
   return (
-    <div className="App">
-      <div className="bg-red-500">Hello</div>
-    </div>
+    <Router>
+      <Header></Header>
+      <Routes>
+        <Route path="/" element={<Watchlist />}></Route>
+        <Route path="/watched" element={<Watched />}></Route>
+        <Route path="/add" element={<Add />}></Route>
+      </Routes>
+    </Router>
   );
 }
 
